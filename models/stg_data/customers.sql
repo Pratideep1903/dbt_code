@@ -7,3 +7,4 @@ with tbl1 as(
         last_name
     from {{source('datafeed_shared_schema','customer_data')}})
     select * from tbl1
+
