@@ -10,3 +10,5 @@ emp_data_updated as(
 select * from emp_data_updated
 
 
+
+
