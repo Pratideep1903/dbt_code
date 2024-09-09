@@ -10,7 +10,7 @@ with customers as (
     
 orders_data as (
     select
-        ID as order_id,
+        order_id,
         USER_ID,
         ORDER_DATE,
         STATUS
@@ -18,7 +18,7 @@ orders_data as (
     
 customer_orders as (
     select
-        user_id,
+        user_id as customer_id,
         min(order_date) as first_order_date,
         max(order_date) as most_recent_order_date,
         count(order_id) as number_of_orders
