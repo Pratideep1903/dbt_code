@@ -1,0 +1,11 @@
+version: 2
+sources:
+  - name: datafeed_shared_schema
+    database: "{{('DBT_SALES')}}"
+    schema: dbt_source
+    
+    tables:
+      - name: customer_data
+      - name: orders 
+      - name: payments
+      - name: emp
