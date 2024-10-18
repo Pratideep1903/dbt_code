@@ -15,7 +15,7 @@ sources:
           - name: status
             tests:
               - accepted_values:
-                  values: ['placed', 'shipped', 'completed', 'returned', 'return_pending','x','xx','xxx']
+                  values: ['placed', 'shipped', 'completed', 'returned', 'return_pending']
                    
       - name: payments
       - name: emp
