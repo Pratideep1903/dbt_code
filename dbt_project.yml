@@ -42,6 +42,10 @@ models:
       +materialized: table
     stg_data:
       +materialized: table
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
 
 snapshots:
   +target_schema: snapshots

@@ -1,0 +1,37 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: dev_db
+    schema: raw_layer
+    tables:
+      - name: employees
+
+  - name: tpch
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF1
+
+    tables:
+      - name: ORDERS
+        columns:
+          - name: O_ORDERKEY
+            tests:
+              - unique
+              - not_null
+      - name: LINEITEM
+        columns:
+          - name: L_ORDERKEY
+            tests:
+              - relationships:
+                  to: source('tpch','ORDERS')
+                  field: O_ORDERKEY
+
+exposures:
+  - name: my_exposure
+    type: analysis
+    depends_on: 
+      - ref('employees')
+      - snapshot('timestamp_statergy')
+    owner: 
+      email: pratiksha.avhad1903@gmail.com
+      
