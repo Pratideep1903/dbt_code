@@ -1,0 +1,5 @@
+selectors:
+  - name: run 2 models
+    definition: 
+      method: exposure
+      value: my_exposure
